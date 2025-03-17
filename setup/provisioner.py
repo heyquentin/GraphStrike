@@ -136,7 +136,7 @@ def provision():
             return
         p_task(f"Signing into {tenant}...")
         try:
-            response = AzCli(f"login --allow-no-subscriptions --tenant {tenant}")
+            response = AzCli(f"login --use-device-code --allow-no-subscriptions --tenant {tenant}")
             tenantId = response[0]['tenantId']
             p_success("SUCCESS!")
             break
